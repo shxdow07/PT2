@@ -29,7 +29,6 @@ public abstract class Plantilla extends Persona implements Comparable<Plantilla>
     private String nss;
     private double souBase;
     private double souIncentivat;
-    private transient final Scanner sc = new Scanner(System.in);
     public static ArrayList<Plantilla> ordenarPerRol(HashMap<String, Plantilla> p) {
         ArrayList<Plantilla> arrayVisualitzar = new ArrayList<>();
         Iterator<Entry<String, Plantilla>> itr = p.entrySet().iterator();
@@ -120,6 +119,7 @@ public abstract class Plantilla extends Persona implements Comparable<Plantilla>
 
     public void altaTreballador() {
         altaPersona();
+        Scanner sc = new Scanner(System.in);
         System.out.println("--------------------------------");
         System.out.print("Escriu el NSS: ");
         setNss(sc.next());
@@ -138,7 +138,7 @@ public abstract class Plantilla extends Persona implements Comparable<Plantilla>
     @Override
     public void modificar() {
         super.modificar();
-
+        Scanner sc = new Scanner(System.in);
         System.out.print("Escriu el nou SOU: ");
         double sou = sc.nextDouble();
         setSouBase(sou);

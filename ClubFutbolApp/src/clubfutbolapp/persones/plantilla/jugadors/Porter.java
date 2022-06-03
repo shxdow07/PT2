@@ -19,7 +19,7 @@ import clubfutbolapp.validacions.Telefon;
 public class Porter extends Jugador implements Serializable{
     private int golsAturats;
     private int golsRebuts;
-    private static int incentiuGA = 150;
+    private static int incentiuGolsAturats = 150;
 
     public int getGolsAturats() {
         return golsAturats;
@@ -37,17 +37,17 @@ public class Porter extends Jugador implements Serializable{
         this.golsRebuts = golsRebuts;
     }
 
-    public static int getIncentiuGA() {
-        return incentiuGA;
+    public static int getIncentiuGolsAturats() {
+        return incentiuGolsAturats;
     }
 
-    public static void setIncentiuGA(int incentiuGA) {
-        Porter.incentiuGA = incentiuGA;
+    public static void setIncentiuGolsAturats(int incentiuGolsAturats) {
+        Porter.incentiuGolsAturats = incentiuGolsAturats;
     }
 
     @Override
     public void calcularSouIncentivat() {
-        setSouIncentivat(getSouBase() + (getGolsAturats() * incentiuGA));;
+        setSouIncentivat(getSouBase() + (getGolsAturats() * incentiuGolsAturats));;
     }
 
     public Porter(Dni dni, String nom, String cognom1, String cognom2, LocalDate data_naix, Telefon telefon,
